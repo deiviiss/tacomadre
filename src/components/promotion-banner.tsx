@@ -62,7 +62,7 @@ export function PromotionBanner({ promotions }: PromotionBannerProps) {
         return (
           <motion.div
             key={promotion.id}
-            className="bg-card dark:border dark:border-primary rounded-lg shadow-md overflow-hidden max-w-lg h-full flex flex-col"
+            className="bg-card border border-primary rounded-lg shadow-md overflow-hidden max-w-lg h-full flex flex-col"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}

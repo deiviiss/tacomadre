@@ -135,7 +135,7 @@ export async function Footer() {
               />
             </Link>
           </div>
-          <p>© {new Date().getFullYear()} {companyName}. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} {companyName} Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

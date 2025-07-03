@@ -20,10 +20,25 @@ export default async function Home() {
 
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="bg-primary-gradient py-12">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Nuestro Menú</h1>
-            <p className="text-xl mb-6">Deliciosos productos a un solo clic de distancia</p>
+        <section
+          className="bg-primary-gradient py-12 relative"
+          style={{
+            backgroundImage: "url('/images/logo.png')",
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            minHeight: '300px'
+          }}
+        >
+          {/* Overlay con blur y transparencia */}
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-0" />
+          <div className="container mx-auto px-4 relative z-10">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-secondary drop-shadow">
+              Nuestro Menú
+            </h1>
+            <p className="text-xl mb-6 text-white drop-shadow">
+              Del corazón de nuestra cocina hasta tu mesa
+            </p>
           </div>
         </section>
 

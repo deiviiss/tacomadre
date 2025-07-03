@@ -26,7 +26,7 @@ export function Navbar() {
             <Link href="/" >
               <Image
                 src="/images/logo.webp"
-                alt="Burger dev logo"
+                alt="taco-madre logo"
                 width={180}
                 height={180}
                 className="object-contain"
@@ -49,7 +49,7 @@ export function Navbar() {
               <ShoppingCart className="h-5 w-5 mr-1" />
               <span className="hidden sm:inline">Carrito</span>
               {totalItems > 0 && (
-                <Badge className="absolute -top-2 -right-2 bg-primary text-card px-1.5 py-0.5 text-xs rounded-full">
+                <Badge className="absolute -top-2 -right-2 bg-destructive text-muted px-1.5 py-0.5 text-xs rounded-full">
                   {totalItems}
                 </Badge>
               )}

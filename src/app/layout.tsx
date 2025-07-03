@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Quicksand } from 'next/font/google'
 import { Toaster } from 'sonner'
-import { ToogleDarkMode } from '@/components/dark-mode/toogle-dark-mode/ToogleDarkMode'
 import { Providers } from '@/components/providers/Providers'
 import ScrollToTop from '@/components/scroll-to-top/ScrollToTop'
 import './globals.css'
@@ -9,8 +8,8 @@ import './globals.css'
 const inter = Quicksand({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Taco Madre',
-  description: 'Taco Madre es un menú digital moderno, diseñado para ofrecer una experiencia interactiva y sencilla a tus clientes.',
+  title: 'Taco Madre!',
+  description: 'Taco Madre es un menú digital moderno, diseñado para ofrecer una experiencia interactiva y sencilla a nuestros clientes.',
   keywords: [
     'menú digital',
     'hamburgueserías',
@@ -40,7 +39,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           {children}
-          <ToogleDarkMode />
           <ScrollToTop />
           <Toaster position="bottom-right" richColors />
         </Providers>
