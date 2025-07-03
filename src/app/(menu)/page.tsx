@@ -23,7 +23,7 @@ export default async function Home() {
         <section
           className="bg-primary-gradient py-12 relative"
           style={{
-            backgroundImage: "url('/images/logo.png')",
+            backgroundImage: "url('/images/header.webp')",
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
