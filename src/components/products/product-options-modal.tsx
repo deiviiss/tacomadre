@@ -22,7 +22,8 @@ interface ProductOptionsModalProps {
 
 export default function ProductOptionsModal({ product, isOpen, onClose }: ProductOptionsModalProps) {
   const [selectedOptionId, setSelectedOptionId] = useState<string>('') // Size
-  const [selectedOptionIds, setSelectedOptionIds] = useState<string[]>([]) // Ingredients
+  const [selectedExtraIds, setSelectedExtraIds] = useState<string[]>([]) // Ingredients
+  const [selectedWithoutIds, setSelectedWithoutIds] = useState<string[]>([]) // Without ingredients
   const [specialNote, setSpecialNote] = useState<string>('') // Note
   const [selectedLimitedOptionIds, setSelectedLimitedOptionIds] = useState<string[]>([]) // Limited ingredients
 
@@ -32,7 +33,9 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
   // Size
   const selectedOption = product.options?.find((option) => option.id === selectedOptionId) || null
   // Ingredients
-  const selectedOptions = product.options?.filter((option) => selectedOptionIds.includes(option.id || '')) || []
+  const selectedExtraOptions = product.options?.filter((option) => selectedExtraIds.includes(option.id || '')) || []
+  // Without ingredients
+  const selectedWithoutOptions = product.options?.filter((option) => selectedWithoutIds.includes(option.id || '')) || []
   // Limited ingredients
   const selectedLimitedOptions = product.options?.filter(
     (option) => selectedLimitedOptionIds.includes(option.id || '')
@@ -56,8 +59,9 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
 
     const options = [
       ...(selectedOption ? [selectedOption] : []),
-      ...(selectedOptions || []),
+      ...(selectedExtraOptions || []),
       ...(selectedLimitedOptions || []),
+      ...(selectedWithoutOptions || []),
       ...variableOption,
       ...noteOption
     ]
@@ -78,7 +82,7 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
     setSpecialNote('')
     onClose()
     setSelectedOptionId('')
-    setSelectedOptionIds([])
+    setSelectedExtraIds([])
     setSelectedLimitedOptionIds([])
     setQuantity(1)
   }
@@ -86,7 +90,7 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
   const handleClose = () => {
     onClose()
     setSelectedOptionId('')
-    setSelectedOptionIds([])
+    setSelectedExtraIds([])
     setSelectedLimitedOptionIds([])
     setQuantity(1)
   }
@@ -146,7 +150,7 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
             <div className="bg-muted rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-hidden border">
               {/* Header */}
               <div className="flex justify-between items-center p-4 border-b">
-                <h2 className="text-lg font-semibold">Selecciona tus opciones</h2>
+                <h2 className="text-lg font-semibold">Personaliza tu pedido</h2>
                 <button
                   onClick={handleClose}
                   className="p-1 rounded-full hover:bg-muted transition-colors"
@@ -210,6 +214,16 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
                   </>
                 }
 
+                {/* Options Selector for sizes */}
+                {
+                  product.groupedOptions?.size &&
+                  <ProductSelector
+                    options={product.groupedOptions?.size}
+                    selectedOptionId={selectedOptionId}
+                    setSelectedOptionId={setSelectedOptionId}
+                  />
+                }
+
                 <div className="flex flex-col gap-5">
                   {/* Product limited Options */}
                   {
@@ -228,18 +242,20 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
                     product.groupedOptions?.ingredient &&
                     <ProductOptionsMultiple
                       options={product.groupedOptions?.ingredient}
-                      selectedOptionIds={selectedOptionIds}
-                      setSelectedOptionIds={setSelectedOptionIds}
+                      selectedOptionIds={selectedExtraIds}
+                      setSelectedOptionIds={setSelectedExtraIds}
+                      title='Añade ingredientes extra:'
                     />
                   }
 
-                  {/* Options Selector for sizes */}
+                  {/* Option Selector for without ingredients */}
                   {
-                    product.groupedOptions?.size &&
-                    <ProductSelector
-                      options={product.groupedOptions?.size}
-                      selectedOptionId={selectedOptionId}
-                      setSelectedOptionId={setSelectedOptionId}
+                    product.groupedOptions?.without_ingredient &&
+                    <ProductOptionsMultiple
+                      options={product.groupedOptions?.without_ingredient}
+                      selectedOptionIds={selectedWithoutIds}
+                      setSelectedOptionIds={setSelectedWithoutIds}
+                      title='Personaliza tus ingredientes:'
                     />
                   }
 
@@ -290,21 +306,21 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
                     >
                       <div className="flex items-center gap-2">
                         <MessageSquare className="h-4 w-4 text-primary" />
-                        <h4 className="font-medium">Instrucciones especiales</h4>
+                        <h4 className="font-medium">Añade instrucciones especiales</h4>
                       </div>
                       <div className="bg-muted border border-primary/20 rounded-lg p-3">
                         <Textarea
                           value={specialNote}
                           onChange={(e) => { setSpecialNote(e.target.value) }}
-                          placeholder="Ej: sin cebolla, con doble queso, bien cocido, etc."
+                          placeholder="Ejemplo: sin cebolla, con extra queso, bien cocido, etc."
                           className="min-h-[80px] resize-none border-primary focus:border-secondary focus:ring-secondary"
                           maxLength={200}
                         />
                         <div className="flex justify-between items-center mt-2">
-                          <span className="text-xs text-primary/90">
-                            Opcional - Comparte cualquier preferencia especial
+                          <span className="text-xs text-secondary/90">
+                            (Opcional) Agrega notas adicionales
                           </span>
-                          <span className="text-xs text-primary">{specialNote.length}/200</span>
+                          <span className="text-xs text-secondary">{specialNote.length}/200</span>
                         </div>
                       </div>
                     </motion.div>
@@ -320,7 +336,7 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
                   className="w-full"
                 >
                   <ShoppingCart className="mr-2 h-4 w-4" />
-                  Agregar al carrito {quantity > 1 && `(${quantity})`}
+                  Añadir al carrito {quantity > 1 && `(${quantity})`}
                 </Button>
 
                 {

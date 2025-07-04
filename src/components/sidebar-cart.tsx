@@ -213,7 +213,7 @@ export function SidebarCart() {
                 <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
                   <ShoppingBag className="h-16 w-16 mb-4 opacity-30" />
                   <p className="text-center">Tu carrito está vacío</p>
-                  <Button variant="link" className="mt-2 text-primary" onClick={closeSideCart}>
+                  <Button variant="link" className="mt-2 text-secondary" onClick={closeSideCart}>
                     Continuar comprando
                   </Button>
                 </div>)

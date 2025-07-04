@@ -81,7 +81,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             <ProductOptionButton product={product} />
           </Button>
 
-          <p className="text-lg font-extrabold text-secondary">{`${product.price ? `$ ${product.price}` : ''}`}</p>
+          <p className="text-xl font-extrabold text-secondary">{`${product.price ? `$ ${product.price}` : ''}`}</p>
         </div>
       </motion.div>
 

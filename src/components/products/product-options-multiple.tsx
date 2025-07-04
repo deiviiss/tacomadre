@@ -9,12 +9,14 @@ interface ProductOptionsMultipleProps {
   options: ProductOption[]
   selectedOptionIds: string[]
   setSelectedOptionIds: React.Dispatch<React.SetStateAction<string[]>>
+  title: string
 }
 
 export const ProductOptionsMultiple = ({
   options,
   selectedOptionIds,
-  setSelectedOptionIds
+  setSelectedOptionIds,
+  title
 }: ProductOptionsMultipleProps) => {
   const handleOptionToggle = (optionId: string) => {
     setSelectedOptionIds((prev) => {
@@ -27,47 +29,45 @@ export const ProductOptionsMultiple = ({
   }
 
   return (
-    <div className="space-y-4">
-      <div>
-        <h4 className="font-medium mb-3">Selecciona los ingredientes que desees:</h4>
-        <div className="space-y-1">
-          {options?.map((option) => (
-            <motion.div
-              key={option.id}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2 }}
-              className={`flex items-center space-x-3 p-3 rounded-lg border transition-colors ${selectedOptionIds.includes(option.id || '')
-                ? 'bg-primary/5 border-primary'
-                : 'bg-muted/30 border-border hover:bg-muted/50'
+    <div>
+      <h4 className="font-medium mb-3">{title}</h4>
+      <div className="space-y-0">
+        {options?.map((option) => (
+          <motion.div
+            key={option.id}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            className={`flex items-center space-x-3 p-3 rounded-lg border transition-colors ${selectedOptionIds.includes(option.id || '')
+              ? 'bg-primary/5 border-primary'
+              : 'bg-muted/30 border-border hover:bg-muted/50'
+              }`}
+          >
+            <Checkbox
+              id={`option-${option.id}`}
+              checked={selectedOptionIds.includes(option.id || '')}
+              onCheckedChange={() => { handleOptionToggle(option.id || '') }}
+              disabled={!option.isAvailable}
+            />
+            <Label
+              htmlFor={`option-${option.id}`}
+              className={`flex-1 cursor-pointer ${!option.isAvailable ? 'text-muted-foreground line-through' : ''
                 }`}
             >
-              <Checkbox
-                id={`option-${option.id}`}
-                checked={selectedOptionIds.includes(option.id || '')}
-                onCheckedChange={() => { handleOptionToggle(option.id || '') }}
-                disabled={!option.isAvailable}
-              />
-              <Label
-                htmlFor={`option-${option.id}`}
-                className={`flex-1 cursor-pointer ${!option.isAvailable ? 'text-muted-foreground line-through' : ''
-                  }`}
-              >
-                <div className="flex justify-between items-center">
-                  <span className="font-medium">{option.name}</span>
-                  <span className="text-muted-foreground">
-                    {option.price > 0 ? `+$${option.price.toFixed(2)}` : 'Incluido'}
-                  </span>
-                </div>
-              </Label>
-              {!option.isAvailable && (
-                <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
-                  No disponible
+              <div className="flex justify-between items-center">
+                <span className="font-medium">{option.name}</span>
+                <span className="text-muted-foreground">
+                  {option.price > 0 ? `+$${option.price.toFixed(2)}` : ''}
                 </span>
-              )}
-            </motion.div>
-          ))}
-        </div>
+              </div>
+            </Label>
+            {!option.isAvailable && (
+              <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
+                No disponible
+              </span>
+            )}
+          </motion.div>
+        ))}
       </div>
     </div>
   )

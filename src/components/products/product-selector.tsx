@@ -13,7 +13,7 @@ const ProductSelector = ({
   setSelectedOptionId
 }: ProductSelectorProps) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mb-3">
       {/* Options Select */}
       <div>
         {/* <h4 className="font-medium mb-2">Selecciona el pan:</h4> */}
