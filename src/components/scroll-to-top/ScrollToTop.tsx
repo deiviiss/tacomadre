@@ -35,8 +35,8 @@ export default function ScrollToTop() {
       {isVisible && (
         <Button
           size={'lg'}
-          variant='secondary'
-          className="fixed bottom-3 right-3 z-30"
+          variant={'secondary'}
+          className="fixed bottom-3 right-3 z-30 bg-secondary hover:bg-secondary/80"
           asChild
         >
           <motion.button
