@@ -14,18 +14,6 @@ export async function getPromotions(): Promise<Promotion[]> {
 
     const promotions: Promotion[] = [
       {
-        id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
-        name: 'Jueves 3 x 2 tacos y gringas',
-        description: 'Pastor, Asada y Norteño',
-        discountPercentage: 0,
-        originalPrice: 0,
-        promoPrice: 0,
-        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751674426/Jueves_3x2_tacos_gvrpob.png',
-        categoryId: categoryIds.Promociones,
-        createdAt: new Date('2025-07-01T05:00:00.000Z'),
-        isActive: true
-      },
-      {
         id: 'a2bbd10e-78cc-4432-a111-1f02b2c3d111',
         name: 'Lunes 3 x 2 burges',
         description: 'Excepto Arrachera y New York',
@@ -45,6 +33,18 @@ export async function getPromotions(): Promise<Promotion[]> {
         originalPrice: 180.00,
         promoPrice: 162.00,
         image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751679540/promo_3x2_bolillos_ixmew6.png',
+        categoryId: categoryIds.Promociones,
+        createdAt: new Date('2025-07-01T05:00:00.000Z'),
+        isActive: true
+      },
+      {
+        id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+        name: 'Jueves 3 x 2 tacos y gringas',
+        description: 'Pastor, Asada y Norteño',
+        discountPercentage: 0,
+        originalPrice: 0,
+        promoPrice: 0,
+        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751674426/Jueves_3x2_tacos_gvrpob.png',
         categoryId: categoryIds.Promociones,
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true

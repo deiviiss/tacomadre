@@ -45,6 +45,7 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
     const hasSomethingSelected =
       isVariableOnly ||
       isFreeSelectionOnly ||
+      isWithoutOnly ||
       (!!selectedOption || selectedLimitedOptions.length > 0)
 
     if (!hasSomethingSelected) return
@@ -113,14 +114,18 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
   const hasVariableOptions = variablePriceOptions.length > 0
   const hasNoteOptions = noteOptions.length > 0
   const hasLimitedIngredientOptions = limitedIngredientOptions.length > 0
+  const hasWithoutOptions = !!product.groupedOptions?.without_ingredient?.length
 
   const isVariableOnly = hasVariableOptions && !hasSizeOptions && !hasIngredientOptions
   const isFreeSelectionOnly =
     hasIngredientOptions && !hasSizeOptions && !hasLimitedIngredientOptions
 
-  const isReadyToAdd =
-    isVariableOnly || isFreeSelectionOnly || (
-      [hasSizeOptions ? !!selectedOption : true, hasLimitedIngredientOptions ? selectedLimitedOptionIds.length > 0 : true]).every(Boolean)
+  const isWithoutOnly = hasWithoutOptions && !hasSizeOptions && !hasLimitedIngredientOptions && !hasIngredientOptions && !hasVariableOptions
+
+  const isReadyToAdd = isVariableOnly || isFreeSelectionOnly || isWithoutOnly || (
+    (hasSizeOptions ? !!selectedOption : true) &&
+    (hasLimitedIngredientOptions ? selectedLimitedOptionIds.length > 0 : true)
+  )
 
   const showQuantitySelector =
     isVariableOnly || isFreeSelectionOnly || !!selectedOption || selectedLimitedOptionIds.length > 0
