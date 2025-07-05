@@ -227,6 +227,11 @@ export function SidebarCart() {
                     const hasIngredientOnly = item.product.options?.some(option => option.type === 'ingredient') &&
                       !item.product.options?.some(option => option.type === 'size')
 
+                    const hasWithoutIngredientOnly = item.product.options?.some(option => option.type === 'without_ingredient') &&
+                      !item.product.options?.some(option => option.type === 'size') &&
+                      !item.product.options?.some(option => option.type === 'ingredient') &&
+                      !item.product.options?.some(option => option.type === 'limited_ingredient')
+
                     return (
                       <motion.li
                         key={item.cartItemId}
@@ -270,6 +275,25 @@ export function SidebarCart() {
 
                           {/* INGREDIENTS / LIMITED INGREDIENTS */}
                           {(hasLimitedIngredientOption || hasIngredientOnly) && (
+                            <div className="flex items-center mt-1">
+                              <button
+                                onClick={() => { updateQuantity(item.cartItemId, Math.max(1, item.quantity - 1)) }}
+                                className="text-muted-foreground hover:text-primary w-6 h-6 flex items-center justify-center"
+                              >
+                                -
+                              </button>
+                              <span className="mx-2 w-6 text-center text-sm">{item.quantity}</span>
+                              <button
+                                onClick={() => { updateQuantity(item.cartItemId, item.quantity + 1) }}
+                                className="text-muted-foreground hover:text-primary w-6 h-6 flex items-center justify-center"
+                              >
+                                +
+                              </button>
+                            </div>
+                          )}
+
+                          {/* WITHOUT INGREDIENTS / LIMITED INGREDIENTS → simple control */}
+                          {hasWithoutIngredientOnly && (
                             <div className="flex items-center mt-1">
                               <button
                                 onClick={() => { updateQuantity(item.cartItemId, Math.max(1, item.quantity - 1)) }}

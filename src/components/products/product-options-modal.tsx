@@ -128,7 +128,11 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
   )
 
   const showQuantitySelector =
-    isVariableOnly || isFreeSelectionOnly || !!selectedOption || selectedLimitedOptionIds.length > 0
+    isVariableOnly ||
+    isFreeSelectionOnly ||
+    isWithoutOnly ||
+    !!selectedOption ||
+    selectedLimitedOptionIds.length > 0
 
   return (
     <AnimatePresence>
