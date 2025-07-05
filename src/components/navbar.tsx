@@ -49,7 +49,7 @@ export function Navbar() {
               <ShoppingCart className="h-5 w-5 mr-1" />
               <span className="hidden sm:inline">Carrito</span>
               {totalItems > 0 && (
-                <Badge className="absolute -top-2 -right-2 bg-destructive text-muted px-1.5 py-0.5 text-xs rounded-full">
+                <Badge className="absolute -top-2 -right-2 bg-destructive text-white px-1.5 py-0.5 text-xs rounded-full">
                   {totalItems}
                 </Badge>
               )}

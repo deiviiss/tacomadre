@@ -30,7 +30,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Asado',
       description: '',
       price: 25,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751547870/Taco_de_asada_sydqvk.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751678887/taco_asado_eetmkj.png',
       categoryId: categoryIds.Tacos,
       isAvailable: true,
       createdAt: new Date()
@@ -50,7 +50,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Pastor',
       description: 'Cebolla, cilantro, piña',
       price: 25,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751547870/Taco_de_pastor_b8bbtc.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751678922/Taco_de_pastor_dp4yzz.png',
       categoryId: categoryIds.Tacos,
       isAvailable: true,
       createdAt: new Date()
@@ -176,7 +176,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Asado',
       description: '',
       price: 120,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751547877/Burrito_de_Asada_bv1442.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751678999/Burrito_de_Asada_jlqfsc.png',
       categoryId: categoryIds.Burritos,
       isAvailable: true,
       createdAt: new Date()
@@ -270,7 +270,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Maradona',
       description: 'Chorizo tipo argentino, guacamole, chimichurri',
       price: 100,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751547876/Burger_Maradona_g1raxl.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751679080/Burger_Maradona_wimeoq.png',
       categoryId: categoryIds['Las Burgers'],
       isAvailable: true,
       createdAt: new Date()
@@ -350,7 +350,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Pastorera',
       description: 'Carne al pastor, piña, cebolla y cilantro',
       price: 125,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751547877/Burger_Pastorera_khpdan.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751679080/Burger_Pastorera_obblmj.png',
       categoryId: categoryIds['Las Burgers'],
       isAvailable: true,
       createdAt: new Date()
@@ -480,7 +480,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Carne al pastor',
       description: 'cebolla, cilantro, salsas, limones, tortillas, piña',
       price: 0,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751547883/carne_al_pastor_g4qzvs.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751679079/carne_al_pastor_e8uvh4.png',
       categoryId: categoryIds['Carne al Pastor'],
       isAvailable: true,
       createdAt: new Date()
