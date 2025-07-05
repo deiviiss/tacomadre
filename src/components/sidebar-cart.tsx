@@ -259,14 +259,14 @@ export function SidebarCart() {
                               <span className="mr-2 text-sm font-medium">{sizeOption.name}</span>
                               <button
                                 onClick={() => { updateQuantity(item.cartItemId, Math.max(1, item.quantity - 1)) }}
-                                className="text-muted-foreground hover:text-primary w-5 h-5 flex items-center justify-center"
+                                className="text-muted-foreground hover:text-secondary w-5 h-5 flex items-center justify-center"
                               >
                                 -
                               </button>
                               <span className="mx-2">{item.quantity}</span>
                               <button
                                 onClick={() => { updateQuantity(item.cartItemId, item.quantity + 1) }}
-                                className="text-muted-foreground hover:text-primary w-5 h-5 flex items-center justify-center"
+                                className="text-muted-foreground hover:text-secondary w-5 h-5 flex items-center justify-center"
                               >
                                 +
                               </button>
@@ -278,14 +278,14 @@ export function SidebarCart() {
                             <div className="flex items-center mt-1">
                               <button
                                 onClick={() => { updateQuantity(item.cartItemId, Math.max(1, item.quantity - 1)) }}
-                                className="text-muted-foreground hover:text-primary w-6 h-6 flex items-center justify-center"
+                                className="text-muted-foreground hover:text-secondary w-6 h-6 flex items-center justify-center"
                               >
                                 -
                               </button>
                               <span className="mx-2 w-6 text-center text-sm">{item.quantity}</span>
                               <button
                                 onClick={() => { updateQuantity(item.cartItemId, item.quantity + 1) }}
-                                className="text-muted-foreground hover:text-primary w-6 h-6 flex items-center justify-center"
+                                className="text-muted-foreground hover:text-secondary w-6 h-6 flex items-center justify-center"
                               >
                                 +
                               </button>
@@ -297,14 +297,14 @@ export function SidebarCart() {
                             <div className="flex items-center mt-1">
                               <button
                                 onClick={() => { updateQuantity(item.cartItemId, Math.max(1, item.quantity - 1)) }}
-                                className="text-muted-foreground hover:text-primary w-6 h-6 flex items-center justify-center"
+                                className="text-muted-foreground hover:text-secondary w-6 h-6 flex items-center justify-center"
                               >
                                 -
                               </button>
                               <span className="mx-2 w-6 text-center text-sm">{item.quantity}</span>
                               <button
                                 onClick={() => { updateQuantity(item.cartItemId, item.quantity + 1) }}
-                                className="text-muted-foreground hover:text-primary w-6 h-6 flex items-center justify-center"
+                                className="text-muted-foreground hover:text-secondary w-6 h-6 flex items-center justify-center"
                               >
                                 +
                               </button>
@@ -328,14 +328,14 @@ export function SidebarCart() {
                               <div className="flex items-center mt-1">
                                 <button
                                   onClick={() => { updateQuantity(item.cartItemId, Math.max(1, item.quantity - 1)) }}
-                                  className="text-muted-foreground hover:text-primary w-6 h-6 flex items-center justify-center"
+                                  className="text-muted-foreground hover:text-secondary w-6 h-6 flex items-center justify-center"
                                 >
                                   -
                                 </button>
                                 <span className="mx-2 w-6 text-center text-sm">{item.quantity}</span>
                                 <button
                                   onClick={() => { updateQuantity(item.cartItemId, item.quantity + 1) }}
-                                  className="text-muted-foreground hover:text-primary w-6 h-6 flex items-center justify-center"
+                                  className="text-muted-foreground hover:text-secondary w-6 h-6 flex items-center justify-center"
                                 >
                                   +
                                 </button>

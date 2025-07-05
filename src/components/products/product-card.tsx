@@ -76,7 +76,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             onClick={handleAddToCart}
             disabled={isSubmitting}
             size="sm"
-            className="bg-secondary hover:bg-primary/80"
+            className="bg-secondary hover:bg-secondary/80"
           >
             <ProductOptionButton product={product} />
           </Button>
