@@ -11,6 +11,12 @@ export async function getCategories(): Promise<Category[]> {
       image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp'
     },
     {
+      id: '956512ec-edac-4484-967d-1009e92cc9a4',
+      name: 'Gringas',
+      description: 'Queso, cebolla asada y guacamole',
+      image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp'
+    },
+    {
       id: '1d975b19-a4a7-4b9f-802b-764650f07df2',
       name: 'Tortas',
       description: 'Frijol, queso, cebolla asada y guacamole',
@@ -21,12 +27,6 @@ export async function getCategories(): Promise<Category[]> {
       id: '29a1c64f-173e-4d4d-9d1e-8b73a54e1f5e',
       name: 'Burritos',
       description: 'Queso, cebolla asada, guacamole, lechuga y frijol',
-      image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp'
-    },
-    {
-      id: '956512ec-edac-4484-967d-1009e92cc9a4',
-      name: 'Gringas',
-      description: 'Queso, cebolla asada y guacamole',
       image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp'
     },
     // {

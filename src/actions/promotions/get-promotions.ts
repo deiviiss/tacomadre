@@ -1,4 +1,5 @@
 'use server'
+import { randomUUID } from 'crypto'
 import { getCategories } from '@/actions/categories/get-categories'
 import { type Promotion } from '@/lib/types'
 
@@ -13,39 +14,52 @@ export async function getPromotions(): Promise<Promotion[]> {
     }, {})
 
     const promotions: Promotion[] = [
+
       {
-        id: 'a2bbd10e-78cc-4432-a111-1f02b2c3d111',
-        name: 'Lunes 3 x 2 burges',
-        description: 'Excepto Arrachera y New York',
+        id: randomUUID(),
+        name: 'Todos los días Combo especial',
+        description: 'Una hamburguesa artesanal + porción de papa francesa + bebida natural de 600ml',
+        discountPercentage: 0,
+        originalPrice: 0,
+        promoPrice: 145,
+        image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp',
+        categoryId: categoryIds.Promociones,
+        createdAt: new Date('2025-07-01T05:00:00.000Z'),
+        isActive: true
+      },
+      {
+        id: randomUUID(),
+        name: 'Lunes 3 x 2 Burges',
+        description: 'No aplica en New York, Crispy, Maradona y Arrachera',
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
         image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751674426/Lunes_3x2_burger_pa7nbk.png',
-        categoryId: categoryIds.Promociones,
+        categoryId: categoryIds['Las Burgers'],
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true
       },
       {
-        id: 'c3ccd10f-88cc-4532-b222-2f02b2c3d222',
-        name: 'Miércoles 3 x 2 bolillos',
-        description: 'Solo aplica en Asado Norteño y Pastor',
-        discountPercentage: 10,
-        originalPrice: 180.00,
-        promoPrice: 162.00,
-        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751679540/promo_3x2_bolillos_ixmew6.png',
-        categoryId: categoryIds.Promociones,
-        createdAt: new Date('2025-07-01T05:00:00.000Z'),
-        isActive: true
-      },
-      {
-        id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
-        name: 'Jueves 3 x 2 tacos y gringas',
-        description: 'Pastor, Asada y Norteño',
+        id: randomUUID(),
+        name: 'Miércoles 3 x 2 Tacos y Gringas',
+        description: 'Solo aplica en Asado y Norteño',
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
-        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751674426/Jueves_3x2_tacos_gvrpob.png',
-        categoryId: categoryIds.Promociones,
+        image: '',
+        categoryId: categoryIds.Tacos,
+        createdAt: new Date('2025-07-01T05:00:00.000Z'),
+        isActive: true
+      },
+      {
+        id: randomUUID(),
+        name: 'Jueves 3 x 2 Tortas',
+        description: 'Solo aplica en Asado y Norteño',
+        discountPercentage: 0,
+        originalPrice: 0,
+        promoPrice: 0,
+        image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp',
+        categoryId: categoryIds.Tortas,
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true
       }

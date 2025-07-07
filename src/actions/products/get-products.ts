@@ -2760,11 +2760,13 @@ export async function getProducts(): Promise<Product[]> {
 
   const productsWithRelations = products.map(product => {
     const options = groupOptionsForProduct(product.id)
+    const category = categories.find(cat => cat.id === product.categoryId)
 
     return {
       ...product,
       options,
-      groupedOptions: groupOptionsByType(options)
+      groupedOptions: groupOptionsByType(options),
+      categoryName: category ? category.name : 'Sin categoría'
     }
   })
 
