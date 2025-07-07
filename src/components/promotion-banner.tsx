@@ -1,22 +1,22 @@
 'use client'
 
 import { motion } from 'framer-motion'
-// import { ShoppingCart } from 'lucide-react'
+import { ShoppingCart } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-// import { toast } from 'sonner'
-// import { Button } from '@/components/ui/button'
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
 import type { Promotion } from '@/lib/types'
-// import { useCartStore } from '@/store'
+import { useCartStore } from '@/store'
 
 interface PromotionBannerProps {
   promotions: Promotion[]
 }
 
 export function PromotionBanner({ promotions }: PromotionBannerProps) {
-  // const { addToCart } = useCartStore()
+  const { addToCart } = useCartStore()
   const [activePromotions, setActivePromotions] = useState<Promotion[]>([])
-  // const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     // Filter active promotions within the state
@@ -30,30 +30,41 @@ export function PromotionBanner({ promotions }: PromotionBannerProps) {
     return null
   }
 
-  // const handleAddPromoToCart = (promotion: Promotion) => {
-  //   // Add all products from the promotion to the cart
-  //   const promoProduct = {
-  //     id: promotion.id,
-  //     name: promotion.name,
-  //     description: promotion.description,
-  //     price: promotion.promoPrice,
-  //     image: promotion.image,
-  //     categoryId: promotion.categoryId,
-  //     isAvailable: true,
-  //     isPromotion: true,
-  //     createdAt: new Date()
-  //   }
+  const handleAddPromoToCart = (promotion: Promotion) => {
+    // Add all products from the promotion to the cart
+    const promoProduct = {
+      id: promotion.id,
+      name: promotion.name,
+      description: promotion.description,
+      price: promotion.promoPrice,
+      image: promotion.image,
+      categoryId: promotion.categoryId,
+      categoryName: 'Promoción',
+      isAvailable: true,
+      isPromotion: true,
+      createdAt: new Date()
+    }
 
-  //   addToCart(promoProduct)
-  //   setIsLoading(false)
-  //   toast.success(`${promoProduct.name} agregado al carrito`, {
-  //     position: 'bottom-right'
-  //   })
-  // }
+    addToCart(promoProduct)
+    setIsLoading(false)
+    toast.success(`${promoProduct.name} agregado al carrito`, {
+      position: 'bottom-right'
+    })
+  }
+
+  const scrollToCategory = (categoryId: string) => {
+    const element = document.getElementById(`category-${categoryId}`)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center max-w-screen-lg mx-auto">
       {activePromotions.map((promotion, index) => {
+        // Calculate total price and discounted price
+        const { promoPrice } = promotion
+
         return (
           <motion.div
             key={promotion.id}
@@ -86,28 +97,39 @@ export function PromotionBanner({ promotions }: PromotionBannerProps) {
             <div className="p-4 flex-grow justify-between flex flex-col">
               <h3 className="font-bold text-xl text-white">{promotion.name}</h3>
               <p className="text-muted-foreground mb-3 text-sm">{promotion.description}</p>
-              <div className="flex justify-between items-center mb-4">
-                {/* <div>
-                  <span className="text-lg font-bold text-destructive">${promoPrice.toFixed(2)}</span>
-                  <span className="text-sm text-muted-foreground line-through ml-2">${originalPrice.toFixed(2)}</span>
-                </div> */}
-                {/* <span className="bg-destructive/20 text-red-800 text-xs font-semibold px-2 py-1 rounded">
-                  AHORRA ${discountAmount.toFixed(2)}
-                </span> */}
-              </div>
+              {
+                promoPrice > 0 && (<div className="flex justify-end items-center mb-4">
+                  <span className="text-xl font-bold text-secondary">$ {promoPrice}</span>
+                </div>)
+              }
             </div>
 
-            {/* <div className="flex justify-between items-center p-4 pt-0">
-              <Button
-                variant='secondary'
-                onClick={() => { handleAddPromoToCart(promotion) }}
-                disabled={isLoading}
-                className="w-full"
-              >
-                <ShoppingCart className="mr-2 h-4 w-4" />
-                Agregar al carrito
-              </Button>
-            </div> */}
+            {
+              promotion.promoPrice > 0
+                ? (
+                  <div className="flex justify-between items-center p-4 pt-0">
+                    <Button
+                      variant='secondary'
+                      onClick={() => { handleAddPromoToCart(promotion) }}
+                      disabled={isLoading}
+                      className="w-full"
+                    >
+                      <ShoppingCart className="mr-2 h-4 w-4" />
+                      Agregar al carrito
+                    </Button>
+                  </div>)
+                : (
+                  <div className="flex justify-between items-center p-4 pt-0">
+                    <Button
+                      variant='secondary'
+                      onClick={() => { scrollToCategory(promotion.categoryId) }}
+                      disabled={isLoading}
+                      className="w-full"
+                    >
+                      Ver
+                    </Button>
+                  </div>)
+            }
 
           </motion.div>
         )

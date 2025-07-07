@@ -16,7 +16,7 @@ import {
   DialogDescription,
   DialogFooter
 } from '@/components/ui/dialog'
-import { cn, getProductTotal } from '@/lib/utils'
+import { capitalizeWords, cn, getProductTotal } from '@/lib/utils'
 import { useUiStore, useCartStore } from '@/store'
 
 export function SidebarCart() {
@@ -61,13 +61,14 @@ export function SidebarCart() {
 
     cart.forEach((item) => {
       const productName = item.product.name
+      const productCategory = item.product.categoryName
       const quantity = item.quantity
       const unitTotal = getProductTotal(item.product) // already includes options
       const lineTotal = unitTotal * quantity
 
       const hasVariable = item.product.options?.some(opt => opt.type === 'variable')
 
-      messageOrder += `*${quantity}x* ${productName} - ${hasVariable ? '*Pendiente*' : `$${lineTotal.toFixed(2)}`}\n`
+      messageOrder += `*${productCategory}* \n *${quantity}x* ${productName}- ${hasVariable ? '*Pendiente*' : `$${lineTotal.toFixed(2)}`}\n`
 
       // Only show options if they exist
       if (item.product.options && item.product.options.length > 0) {
@@ -95,11 +96,11 @@ export function SidebarCart() {
     }
 
     if (option === 'delivery') {
+      messageOrder += `👤 *Recibe:* ${deliveryForm.receiverName}\n`
       messageOrder += `📍 *Dirección:* ${deliveryForm.address}\n`
 
       if (deliveryForm.reference) messageOrder += `🗺️ *Referencia:* ${deliveryForm.reference}\n`
 
-      messageOrder += `👤 *Recibe:* ${deliveryForm.receiverName}\n`
       messageOrder += `📞 *Teléfono:* ${deliveryForm.receiverPhone}\n`
       messageOrder += `💳 *Pago:* ${deliveryForm.paymentMethod}\n\n`
 
@@ -480,12 +481,24 @@ export function SidebarCart() {
               <Input
                 placeholder="Nombre completo"
                 value={pickupForm.name}
-                onChange={(e) => { setPickupForm({ ...pickupForm, name: e.target.value }) }}
+                onChange={(e) => {
+                  setPickupForm(
+                    {
+                      ...pickupForm,
+                      name: capitalizeWords(e.target.value)
+                    })
+                }}
                 className="w-full p-2 rounded border text-muted-foreground text-sm"
               />
               <Select
                 value={pickupForm.paymentMethod}
-                onValueChange={(value) => { setPickupForm({ ...pickupForm, paymentMethod: value }) }}
+                onValueChange={(value) => {
+                  setPickupForm(
+                    {
+                      ...pickupForm,
+                      paymentMethod: value
+                    })
+                }}
               >
                 <SelectTrigger className='w-full p-2 rounded border text-muted-foreground text-sm'>
                   <SelectValue placeholder="Forma de pago" />
@@ -500,13 +513,43 @@ export function SidebarCart() {
 
           {deliveryType === 'delivery' && (
             <div className="space-y-3 mt-4">
-              <Input placeholder="Nombre de quien recibe" value={deliveryForm.receiverName} onChange={(e) => { setDeliveryForm({ ...deliveryForm, receiverName: e.target.value }) }} className="w-full p-2 rounded border text-sm" />
-              <Input placeholder="Dirección completa" value={deliveryForm.address} onChange={(e) => { setDeliveryForm({ ...deliveryForm, address: e.target.value }) }} className="w-full p-2 rounded border text-sm" />
-              <Input placeholder="Referencia del domicilio" value={deliveryForm.reference} onChange={(e) => { setDeliveryForm({ ...deliveryForm, reference: e.target.value }) }} className="w-full p-2 rounded border text-sm" />
-              <Input placeholder="Teléfono de contacto" value={deliveryForm.receiverPhone} onChange={(e) => { setDeliveryForm({ ...deliveryForm, receiverPhone: e.target.value }) }} className="w-full p-2 rounded border text-sm" />
+              <Input placeholder="Nombre de quien recibe" value={deliveryForm.receiverName} onChange={(e) => {
+                setDeliveryForm(
+                  {
+                    ...deliveryForm,
+                    receiverName: capitalizeWords(e.target.value)
+                  })
+              }} className="w-full p-2 rounded border text-sm" />
+              <Input placeholder="Dirección completa" value={deliveryForm.address} onChange={(e) => {
+                setDeliveryForm(
+                  {
+                    ...deliveryForm,
+                    address: capitalizeWords(e.target.value)
+                  })
+              }} className="w-full p-2 rounded border text-sm" />
+              <Input placeholder="Referencia del domicilio" value={deliveryForm.reference} onChange={(e) => {
+                setDeliveryForm(
+                  {
+                    ...deliveryForm,
+                    reference: capitalizeWords(e.target.value)
+                  })
+              }} className="w-full p-2 rounded border text-sm" />
+              <Input placeholder="Teléfono de contacto" value={deliveryForm.receiverPhone} onChange={(e) => {
+                setDeliveryForm(
+                  {
+                    ...deliveryForm,
+                    receiverPhone: e.target.value
+                  })
+              }} className="w-full p-2 rounded border text-sm" />
               <Select
                 value={deliveryForm.paymentMethod}
-                onValueChange={(value) => { setDeliveryForm({ ...deliveryForm, paymentMethod: value }) }}
+                onValueChange={(value) => {
+                  setDeliveryForm(
+                    {
+                      ...deliveryForm,
+                      paymentMethod: value
+                    })
+                }}
               >
                 <SelectTrigger className='w-full p-2 rounded border text-muted-foreground text-sm'>
                   <SelectValue placeholder="Forma de pago" />

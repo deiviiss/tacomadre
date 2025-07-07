@@ -15,6 +15,7 @@ export interface Product {
   price: number
   image: string
   categoryId: string
+  categoryName?: string
   isAvailable: boolean
   createdAt: Date
   options?: ProductOption[]
