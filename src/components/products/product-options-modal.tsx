@@ -42,20 +42,10 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
   ) || []
 
   const handleAddToCart = () => {
-    const hasSomethingSelected =
-      isVariableOnly ||
-      isFreeSelectionOnly ||
-      isWithoutOnly ||
-      (!!selectedOption || selectedLimitedOptions.length > 0)
-
-    if (!hasSomethingSelected) return
+    if (!isReadyToAdd) return
 
     const noteOption = specialNote
       ? [{ id: crypto.randomUUID(), name: specialNote, price: 0, quantity: 1, isAvailable: true, type: 'note' }]
-      : []
-
-    const variableOption = isVariableOnly
-      ? [{ id: crypto.randomUUID(), name: 'Precio pendiente', price: 0, quantity: 1, isAvailable: true, type: 'variable' }]
       : []
 
     const options = [
@@ -63,7 +53,6 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
       ...(selectedExtraOptions || []),
       ...(selectedLimitedOptions || []),
       ...(selectedWithoutOptions || []),
-      ...variableOption,
       ...noteOption
     ]
 
@@ -104,35 +93,18 @@ export default function ProductOptionsModal({ product, isOpen, onClose }: Produc
   }
 
   const sizeOptions = product.groupedOptions?.size || []
-  const ingredientOptions = product.groupedOptions?.ingredient || []
-  const variablePriceOptions = product.groupedOptions?.variable || []
   const noteOptions = product.options?.filter((option) => option.type === 'note') || []
   const limitedIngredientOptions = product.groupedOptions?.limited_ingredient || []
 
-  const hasSizeOptions = sizeOptions.length > 0
-  const hasIngredientOptions = ingredientOptions.length > 0
-  const hasVariableOptions = variablePriceOptions.length > 0
   const hasNoteOptions = noteOptions.length > 0
+  const hasSizeOptions = sizeOptions.length > 0
   const hasLimitedIngredientOptions = limitedIngredientOptions.length > 0
-  const hasWithoutOptions = !!product.groupedOptions?.without_ingredient?.length
 
-  const isVariableOnly = hasVariableOptions && !hasSizeOptions && !hasIngredientOptions
-  const isFreeSelectionOnly =
-    hasIngredientOptions && !hasSizeOptions && !hasLimitedIngredientOptions
+  const sizeSelected = hasSizeOptions ? !!selectedOption : true
+  const limitedIngredientSelected = hasLimitedIngredientOptions ? selectedLimitedOptionIds.length > 0 : true
 
-  const isWithoutOnly = hasWithoutOptions && !hasSizeOptions && !hasLimitedIngredientOptions && !hasIngredientOptions && !hasVariableOptions
-
-  const isReadyToAdd = isVariableOnly || isFreeSelectionOnly || isWithoutOnly || (
-    (hasSizeOptions ? !!selectedOption : true) &&
-    (hasLimitedIngredientOptions ? selectedLimitedOptionIds.length > 0 : true)
-  )
-
-  const showQuantitySelector =
-    isVariableOnly ||
-    isFreeSelectionOnly ||
-    isWithoutOnly ||
-    !!selectedOption ||
-    selectedLimitedOptionIds.length > 0
+  const isReadyToAdd = sizeSelected && limitedIngredientSelected
+  const showQuantitySelector = isReadyToAdd
 
   return (
     <AnimatePresence>

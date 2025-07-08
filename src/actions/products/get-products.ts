@@ -2091,6 +2091,95 @@ export async function getProducts(): Promise<Product[]> {
       isAvailable: true,
       type: 'without_ingredient'
     },
+    // Clásica (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Clásica' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Clásica' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Clásica' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Clásica' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Clásica' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Clásica' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Clásica' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Clásica' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
     // Clásica (notes)
     {
       id: randomUUID(),
@@ -2137,6 +2226,95 @@ export async function getProducts(): Promise<Product[]> {
       isAvailable: true,
       type: 'without_ingredient'
     },
+    // Cubana (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Cubana' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Cubana' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Cubana' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Cubana' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Cubana' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Cubana' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Cubana' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Cubana' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
     // Cubana (notes)
     {
       id: randomUUID(),
@@ -2182,6 +2360,95 @@ export async function getProducts(): Promise<Product[]> {
       quantity: 0,
       isAvailable: true,
       type: 'without_ingredient'
+    },
+    // Maradona (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Maradona' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Maradona' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Maradona' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Maradona' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Maradona' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Maradona' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Maradona' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Maradona' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
     },
     // Maradona (notes)
     {
@@ -2240,6 +2507,95 @@ export async function getProducts(): Promise<Product[]> {
       isAvailable: true,
       type: 'without_ingredient'
     },
+    // Mexicanísima (PICA CON MADRE) (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Mexicanísima (PICA CON MADRE)' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Mexicanísima (PICA CON MADRE)' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Mexicanísima (PICA CON MADRE)' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Mexicanísima (PICA CON MADRE)' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Mexicanísima (PICA CON MADRE)' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Mexicanísima (PICA CON MADRE)' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Mexicanísima (PICA CON MADRE)' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Mexicanísima (PICA CON MADRE)' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
     // Mexicanísima (PICA CON MADRE) (notes)
     {
       id: randomUUID(),
@@ -2276,6 +2632,95 @@ export async function getProducts(): Promise<Product[]> {
       isAvailable: true,
       type: 'without_ingredient'
     },
+    // Jack BBQ (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Jack BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Jack BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Jack BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Jack BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Jack BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Jack BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Jack BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Jack BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
     // Jack BBQ (notes)
     {
       id: randomUUID(),
@@ -2310,6 +2755,95 @@ export async function getProducts(): Promise<Product[]> {
       quantity: 0,
       isAvailable: true,
       type: 'without_ingredient'
+    },
+    // Tocino BBQ (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Tocino BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Tocino BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Tocino BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Tocino BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Tocino BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Tocino BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Tocino BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Tocino BBQ' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
     },
     // Tocino BBQ (notes)
     {
@@ -2367,6 +2901,95 @@ export async function getProducts(): Promise<Product[]> {
       quantity: 0,
       isAvailable: true,
       type: 'without_ingredient'
+    },
+    // Norteña (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Norteña' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Norteña' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Norteña' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Norteña' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Norteña' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Norteña' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Norteña' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Norteña' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
     },
     // Norteña (notes)
     {
@@ -2460,6 +3083,95 @@ export async function getProducts(): Promise<Product[]> {
       isAvailable: true,
       type: 'without_ingredient'
     },
+    // Pollo Crispy (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pollo Crispy' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pollo Crispy' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pollo Crispy' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pollo Crispy' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pollo Crispy' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pollo Crispy' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pollo Crispy' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pollo Crispy' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
     // Pollo Crispy (notes)
     {
       id: randomUUID(),
@@ -2517,6 +3229,95 @@ export async function getProducts(): Promise<Product[]> {
       isAvailable: true,
       type: 'without_ingredient'
     },
+    // De Arrachera (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'De Arrachera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'De Arrachera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'De Arrachera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'De Arrachera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'De Arrachera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'De Arrachera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'De Arrachera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'De Arrachera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
     // De Arrachera (notes)
     {
       id: randomUUID(),
@@ -2573,6 +3374,95 @@ export async function getProducts(): Promise<Product[]> {
       quantity: 0,
       isAvailable: true,
       type: 'without_ingredient'
+    },
+    // Pastorera (ingredients)
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pastorera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Carne',
+      price: 35,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pastorera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Chori argentino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pastorera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Tocino',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pastorera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Piña',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pastorera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Guacamole',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pastorera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Salchica para asar',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pastorera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Queso',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
+    },
+    {
+      id: randomUUID(),
+      productId: products.find(
+        p => p.name === 'Pastorera' && p.categoryId === categoryIds['Las Burgers']
+      )!.id,
+      name: 'Longaniza',
+      price: 20,
+      quantity: 0,
+      isAvailable: true,
+      type: 'ingredient'
     },
     // Pastorera (notes)
     {
@@ -2671,41 +3561,6 @@ export async function getProducts(): Promise<Product[]> {
       isAvailable: true,
       type: 'note'
     },
-    // Plato de complementos (without ingredients)
-    // {
-    //   id: randomUUID(),
-    //   productId: products.find(
-    //     p => p.name === 'Plato de complementos' && p.categoryId === categoryIds.Extras
-    //   )!.id,
-    //   name: 'Sin salchicha para asar',
-    //   price: 0,
-    //   quantity: 0,
-    //   isAvailable: true,
-    //   type: 'without_ingredient'
-    // },
-    // {
-    //   id: randomUUID(),
-    //   productId: products.find(
-    //     p => p.name === 'Plato de complementos' && p.categoryId === categoryIds.Extras
-    //   )!.id,
-    //   name: 'Sin chistorra',
-    //   price: 0,
-    //   quantity: 0,
-    //   isAvailable: true,
-    //   type: 'without_ingredient'
-    // },
-    // {
-    //   id: randomUUID(),
-    //   productId: products.find(
-    //     p => p.name === 'Plato de complementos' && p.categoryId === categoryIds.Extras
-    //   )!.id,
-    //   name: 'Sin chorizo argentino',
-    //   price: 0,
-    //   quantity: 0,
-    //   isAvailable: true,
-    //   type: 'without_ingredient'
-    // },
-    // Plato de complementos (notes)
     {
       id: randomUUID(),
       productId: products.find(
