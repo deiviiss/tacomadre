@@ -22,7 +22,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 145,
-        image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp',
+        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752017313/promo_145_zpxq9p.png',
         categoryId: categoryIds.Promociones,
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true
@@ -46,7 +46,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
-        image: '',
+        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752017287/promo_3x2_tacos_y_gringas_eyy4ks.png',
         categoryId: categoryIds.Tacos,
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true
@@ -58,7 +58,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
-        image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp',
+        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752017307/promo_3x2_tortas_ade4id.png',
         categoryId: categoryIds.Tortas,
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true

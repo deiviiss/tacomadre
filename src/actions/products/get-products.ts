@@ -50,7 +50,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Pastor',
       description: 'Cebolla, cilantro, piña',
       price: 25,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751678922/Taco_de_pastor_dp4yzz.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752022760/taco_pastor_gw05ru.png',
       categoryId: categoryIds.Tacos,
       isAvailable: true,
       createdAt: new Date()
@@ -216,7 +216,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Texano',
       description: 'Arrachera, papas fritas, queso, guacamole',
       price: 160,
-      image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752022436/burrito_texano_bmmhka.png',
       categoryId: categoryIds.Burritos,
       isAvailable: true,
       createdAt: new Date()
@@ -340,7 +340,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'De Arrachera',
       description: 'INCLUYE ½ ORDEN DE PAPAS, tocino, champiñones, crema de ajo',
       price: 150,
-      image: 'https://res.cloudinary.com/djq34ckkj/image/upload/v1749682954/placeholder_ugdi4t.webp',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752022645/burger_arrachera_fq5jsh.png',
       categoryId: categoryIds['Las Burgers'],
       isAvailable: true,
       createdAt: new Date()
