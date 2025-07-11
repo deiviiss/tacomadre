@@ -60,7 +60,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Arrachera',
       description: '',
       price: 35,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751547870/Taco_de_arrachera_cpu5r8.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274072/taco-arrachera_mgho2x.png',
       categoryId: categoryIds.Tacos,
       isAvailable: true,
       createdAt: new Date()
@@ -70,7 +70,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Supremo',
       description: 'Arrachera, camarón, queso',
       price: 45,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751547872/Taco_supremo_vnevhb.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274072/taco-supremo_lvjesj.png',
       categoryId: categoryIds.Tacos,
       isAvailable: true,
       createdAt: new Date()
@@ -226,7 +226,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Supremo',
       description: 'Arrachera, camarón, queso, guacamole',
       price: 200,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752231431/burrito_supremo_ygygpp.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274065/burro-supremo_wqmbdy.png',
       categoryId: categoryIds.Burritos,
       isAvailable: true,
       createdAt: new Date()
@@ -250,7 +250,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Clásica',
       description: 'Queso, catsup y mostaza',
       price: 75,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752231439/burger_clasica_q0cmq2.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274058/burger-clasica_vl5ji2.png',
       categoryId: categoryIds['Las Burgers'],
       isAvailable: true,
       createdAt: new Date()
@@ -290,7 +290,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Jack BBQ',
       description: 'BBQ mezclada con Jack Daniels y tocino',
       price: 100,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752231440/burger_jack_daniels_ndghdf.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274059/burger-jack_abymfl.png',
       categoryId: categoryIds['Las Burgers'],
       isAvailable: true,
       createdAt: new Date()
@@ -300,7 +300,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Tocino BBQ',
       description: 'Salsa BBQ y tocino',
       price: 100,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752231445/burger_tocino_bbq_nvwxif.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274063/burger-tocino_fjdvoe.png',
       categoryId: categoryIds['Las Burgers'],
       isAvailable: true,
       createdAt: new Date()
@@ -320,7 +320,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'New York',
       description: 'Doble carne, doble queso, tocino, salsa de queso',
       price: 130,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752231441/burger_new_york_zuixl6.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274063/burger-new-york_jgxm9j.png',
       categoryId: categoryIds['Las Burgers'],
       isAvailable: true,
       createdAt: new Date()
@@ -330,7 +330,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Pollo Crispy',
       description: 'Salsa BBQ y pechuga extra crunch',
       price: 110,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752231440/burger_crispy_okozel.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274058/burger-crispy_uhyjkl.png',
       categoryId: categoryIds['Las Burgers'],
       isAvailable: true,
       createdAt: new Date()
@@ -340,7 +340,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'De Arrachera',
       description: 'INCLUYE ½ ORDEN DE PAPAS, tocino, champiñones, crema de ajo',
       price: 150,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752022645/burger_arrachera_fq5jsh.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274058/burger_arrachera_cuny6i.png',
       categoryId: categoryIds['Las Burgers'],
       isAvailable: true,
       createdAt: new Date()
@@ -448,7 +448,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Parrillada Completa',
       description: '½ kilo arrachera, ½ kilo asado de cerdo, cebolla asada, salsas, limones, tortillas, papas fritas, 3 pzas salchicha para asar, 6 pzas chistorra, 3 pzas chorizo argentino',
       price: 680,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752234549/parrillada_1_wncwpm.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274072/parillada_completa_wxgwcp.png',
       categoryId: categoryIds.Parrilladas,
       isAvailable: true,
       createdAt: new Date()
@@ -458,7 +458,7 @@ export async function getProducts(): Promise<Product[]> {
       name: '½ Parrillada',
       description: '¼ kilo arrachera, ¼ kilo asado de cerdo, cebolla asada, salsas, limones, tortillas, papas fritas, 2 pzas salchicha para asar, 3 pzas chistorra, 2 pzas chorizo argentino',
       price: 400,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752234553/parrillada_3_psmdww.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274069/media-parrillada_pf5irz.png',
       categoryId: categoryIds.Parrilladas,
       isAvailable: true,
       createdAt: new Date()
@@ -468,7 +468,7 @@ export async function getProducts(): Promise<Product[]> {
       name: '¼ Parrillada',
       description: '150 gr arrachera, 150 gr asado de cerdo, cebolla asada, salsas, limones, tortillas, papas fritas, 1 pza salchicha para asar, 1 pza chorizo tipo argentino, 2 pzas chistorra',
       price: 220,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752234550/parrillada_4_x6bcqi.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274068/cuarto-parrillada_bu7cou.png',
       categoryId: categoryIds.Parrilladas,
       isAvailable: true,
       createdAt: new Date()
@@ -480,7 +480,7 @@ export async function getProducts(): Promise<Product[]> {
       name: 'Carne al pastor',
       description: 'cebolla, cilantro, salsas, limones, tortillas, piña',
       price: 0,
-      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752234542/carne_al_pastor_gzkixr.png',
+      image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752274066/carne_pastor_hfjvye.png',
       categoryId: categoryIds['Carne al Pastor'],
       isAvailable: true,
       createdAt: new Date()
