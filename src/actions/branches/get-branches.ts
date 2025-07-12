@@ -18,7 +18,7 @@ export async function getBranches(): Promise<Branch[]> {
         isOpen: true,
         social: {
           facebook: 'https://www.facebook.com/Tacomadrecampeche?locale=es_LA',
-          whatsapp: 'https://wa.me/+5219811250049',
+          whatsapp: 'https://wa.me/+5219811205654',
           instagram: 'https://www.instagram.com/tacomadrecam/'
         },
         dayOff: 'Martes',
