@@ -17,7 +17,6 @@ export const GoogleMaps = ({ isOpen, onLocationChange, moveToLocation, initialLo
   const mapInstanceRef = useRef<google.maps.Map | null>(null)
   const markerRef = useRef<google.maps.marker.AdvancedMarkerElement | null>(null)
 
-  // Function to reverse geocode coordinates to address
   // reverse geocode helper
   const reverseGeocode = async (lat: number, lng: number) => {
     if (!geocoderRef.current) return
