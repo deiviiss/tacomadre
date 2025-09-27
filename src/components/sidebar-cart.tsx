@@ -1,12 +1,12 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ShoppingBag, Trash2, MessageCircle } from 'lucide-react'
+import { X, ShoppingBag, Trash2, MessageCircle, MapPin } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
-import { Input } from './ui/input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
+import { Badge } from './ui/badge'
+import { LocationPicker } from '@/components/maps/location-picker'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -16,10 +16,13 @@ import {
   DialogDescription,
   DialogFooter
 } from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { capitalizeWords, cn, getProductTotal } from '@/lib/utils'
 import { useUiStore, useCartStore } from '@/store'
 
 export function SidebarCart() {
+  const [showLocationPicker, setShowLocationPicker] = useState(false)
   const [showDeliveryModal, setShowDeliveryModal] = useState(false)
   const [deliveryType, setDeliveryType] = useState<'pickup' | 'delivery' | null>(null)
   const [pickupForm, setPickupForm] = useState({
@@ -31,8 +34,11 @@ export function SidebarCart() {
     reference: '',
     receiverName: '',
     receiverPhone: '',
-    paymentMethod: ''
+    paymentMethod: '',
+    coordinates: { lat: 0, lng: 0 }
   })
+
+  const hasLocation = deliveryForm.coordinates.lat !== 0 && deliveryForm.coordinates.lng !== 0
 
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
   const [showSafariModal, setShowSafariModal] = useState(false)
@@ -96,11 +102,15 @@ export function SidebarCart() {
     }
 
     if (option === 'delivery') {
-      messageOrder += `👤 *Recibe:* ${deliveryForm.receiverName}\n`
       messageOrder += `📍 *Dirección:* ${deliveryForm.address}\n`
 
       if (deliveryForm.reference) messageOrder += `🗺️ *Referencia:* ${deliveryForm.reference}\n`
 
+      messageOrder += deliveryForm.coordinates.lat !== 0
+        ? `📍 *Ubicación:* https://www.google.com/maps?q=${deliveryForm.coordinates.lat},${deliveryForm.coordinates.lng}\n\n`
+        : ''
+
+      messageOrder += `👤 *Recibe:* ${deliveryForm.receiverName}\n`
       messageOrder += `📞 *Teléfono:* ${deliveryForm.receiverPhone}\n`
       messageOrder += `💳 *Pago:* ${deliveryForm.paymentMethod}\n\n`
 
@@ -118,7 +128,8 @@ export function SidebarCart() {
         reference: '',
         receiverName: '',
         receiverPhone: '',
-        paymentMethod: ''
+        paymentMethod: '',
+        coordinates: { lat: 0, lng: 0 }
       })
 
       closeSideCart()
@@ -166,6 +177,15 @@ export function SidebarCart() {
     toast.error('Carrito vaciado', {
       position: 'bottom-right'
     })
+  }
+
+  const handleConfirmLocation = (address: string, lat: number, lng: number) => {
+    setDeliveryForm({
+      ...deliveryForm,
+      address,
+      coordinates: { lat, lng }
+    })
+    setShowLocationPicker(false)
   }
 
   return (
@@ -431,7 +451,8 @@ export function SidebarCart() {
                     reference: '',
                     receiverName: '',
                     receiverPhone: '',
-                    paymentMethod: ''
+                    paymentMethod: '',
+                    coordinates: { lat: 0, lng: 0 }
                   })
                   closeSideCart()
                 }}
@@ -520,6 +541,42 @@ export function SidebarCart() {
                     receiverName: capitalizeWords(e.target.value)
                   })
               }} className="w-full p-2 rounded border text-sm" />
+
+              <div className="border rounded-md py-4 px-0">
+                <div className='flex items-center gap-2 justify-between'>
+                  <h2 className="font-normal text-sm mb-1">Ubicación</h2>
+                  <Badge className="text-[10px]">
+                    Recomendado
+                  </Badge></div>
+                <p className="text-xs text-muted-foreground mb-3">El envío llegará más rápido</p>
+
+                <div className="flex gap-2 justify-between">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => { setShowLocationPicker(true) }}
+                    className="w-full justify-start gap-2 text-sm"
+                  >
+                    <MapPin className="h-4 w-4" />
+                    {hasLocation ? 'Cambiar ubicación' : 'Compartir ubicación 😊'}
+                  </Button>
+
+                  {
+                    hasLocation &&
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => {
+                        setDeliveryForm({ ...deliveryForm, address: '', coordinates: { lat: 0, lng: 0 } })
+                        toast.success('Ubicación borrada')
+                      }}
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  }
+                </div>
+              </div>
+
               <Input placeholder="Dirección completa" value={deliveryForm.address} onChange={(e) => {
                 setDeliveryForm(
                   {
@@ -540,7 +597,7 @@ export function SidebarCart() {
                     ...deliveryForm,
                     receiverPhone: e.target.value
                   })
-              }} className="w-full p-2 rounded border text-sm" />
+              }} className="w-full p-2 rounded border text-sm" autoComplete="off" />
               <Select
                 value={deliveryForm.paymentMethod}
                 onValueChange={(value) => {
@@ -576,7 +633,8 @@ export function SidebarCart() {
                       reference: '',
                       receiverName: '',
                       receiverPhone: '',
-                      paymentMethod: ''
+                      paymentMethod: '',
+                      coordinates: { lat: 0, lng: 0 }
                     })
                   }, 1000)
                 }}
@@ -590,6 +648,19 @@ export function SidebarCart() {
           )}
         </DialogContent>
       </Dialog>
+
+      <LocationPicker
+        isOpen={showLocationPicker}
+        onClose={() => { setShowLocationPicker(false) }}
+        onConfirmLocation={handleConfirmLocation}
+        initialAddress={
+          {
+            lat: deliveryForm.coordinates.lat,
+            lng: deliveryForm.coordinates.lng,
+            address: deliveryForm.address
+          }
+        }
+      />
     </>
   )
 }
