@@ -97,6 +97,7 @@ export function PromotionBanner({ promotions }: PromotionBannerProps) {
             <div className="p-4 flex-grow justify-between flex flex-col">
               <h3 className="font-bold text-xl text-white">{promotion.name}</h3>
               <p className="text-muted-foreground mb-3 text-sm">{promotion.description}</p>
+              <p className="text-muted-foreground mb-3 text-xs">{promotion.notes}</p>
               {
                 promoPrice > 0 && (<div className="flex justify-end items-center mb-4">
                   <span className="text-xl font-bold text-secondary">$ {promoPrice}</span>

@@ -17,7 +17,8 @@ export async function getPromotions(): Promise<Promotion[]> {
       {
         id: randomUUID(),
         name: 'COMBO BURGER INDIVIDUAL',
-        description: 'Hamburguesa de especialidad  + papas + bebida de 1/2 Lt.',
+        description: 'Hamburguesa de especialidad  + Papas + Bebida de 1/2 Lt',
+        notes: 'No aplica en New York y Arrachera',
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 149,
@@ -29,7 +30,8 @@ export async function getPromotions(): Promise<Promotion[]> {
       {
         id: randomUUID(),
         name: 'COMBO PAREJA',
-        description: '2 Burgers + 1 Reca Litro + 1 papas',
+        description: '2 Burgers + 1 Reca Litro + 1 Papas',
+        notes: 'No aplica en New York y Arrachera',
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 299,
@@ -53,7 +55,8 @@ export async function getPromotions(): Promise<Promotion[]> {
       {
         id: randomUUID(),
         name: 'Lunes 3 x 2 Burges',
-        description: 'No aplica en New York, Crispy, Maradona y Arrachera',
+        description: '',
+        notes: 'No aplica en New York, Crispy, Maradona y Arrachera',
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
@@ -65,7 +68,8 @@ export async function getPromotions(): Promise<Promotion[]> {
       {
         id: randomUUID(),
         name: 'Miércoles 3 x 2 Tacos y Gringas',
-        description: 'Solo aplica en Asado y Norteño',
+        description: '',
+        notes: 'Solo aplica en Asado y Norteño',
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
@@ -77,7 +81,8 @@ export async function getPromotions(): Promise<Promotion[]> {
       {
         id: randomUUID(),
         name: 'Jueves 3 x 2 Tortas',
-        description: 'Solo aplica en Asado y Norteño',
+        description: '',
+        notes: 'Solo aplica en Asado y Norteño',
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
