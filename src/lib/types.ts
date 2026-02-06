@@ -34,6 +34,7 @@ export interface Promotion {
   id: string
   name: string
   description: string
+  notes?: string
   discountPercentage: number
   originalPrice: number
   promoPrice: number
