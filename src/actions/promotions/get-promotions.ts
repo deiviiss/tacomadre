@@ -14,7 +14,30 @@ export async function getPromotions(): Promise<Promotion[]> {
     }, {})
 
     const promotions: Promotion[] = [
-
+      {
+        id: randomUUID(),
+        name: 'COMBO BURGER INDIVIDUAL',
+        description: 'Hamburguesa de especialidad  + papas + bebida de 1/2 Lt.',
+        discountPercentage: 0,
+        originalPrice: 0,
+        promoPrice: 149,
+        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1770350579/combo_individual_th5bud.jpg',
+        categoryId: categoryIds['Las Burgers'],
+        createdAt: new Date('2026-02-05T05:00:00.000Z'),
+        isActive: true
+      },
+      {
+        id: randomUUID(),
+        name: 'COMBO PAREJA',
+        description: '2 Burgers + 1 Reca Litro + 1 papas',
+        discountPercentage: 0,
+        originalPrice: 0,
+        promoPrice: 299,
+        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1770350579/combo_pareja_cggs5k.jpg',
+        categoryId: categoryIds['Las Burgers'],
+        createdAt: new Date('2026-02-05T05:00:00.000Z'),
+        isActive: true
+      },
       {
         id: randomUUID(),
         name: 'Todos los días Combo especial',
@@ -25,7 +48,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752017313/promo_145_zpxq9p.png',
         categoryId: categoryIds.Promociones,
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
-        isActive: true
+        isActive: false
       },
       {
         id: randomUUID(),
