@@ -60,7 +60,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
-        image: 'images/promotions/lunes_3x2_burger.webp',
+        image: 'images/promotions/lunes_3_por_2_burger.webp',
         categoryId: categoryIds['Las Burgers'],
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true
