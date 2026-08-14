@@ -22,7 +22,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 149,
-        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1770350579/combo_individual_th5bud.jpg',
+        image: 'images/promotions/combo_individual.webp',
         categoryId: categoryIds['Las Burgers'],
         createdAt: new Date('2026-02-05T05:00:00.000Z'),
         isActive: true
@@ -35,7 +35,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 299,
-        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1770350579/combo_pareja_cggs5k.jpg',
+        image: 'images/promotions/combo_pareja.webp',
         categoryId: categoryIds['Las Burgers'],
         createdAt: new Date('2026-02-05T05:00:00.000Z'),
         isActive: true
@@ -47,7 +47,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 145,
-        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752017313/promo_145_zpxq9p.png',
+        image: 'images/promotions/combo_especial.webp',
         categoryId: categoryIds.Promociones,
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: false
@@ -60,7 +60,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
-        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1751674426/Lunes_3x2_burger_pa7nbk.png',
+        image: 'images/promotions/lunes_3x2_burger.webp',
         categoryId: categoryIds['Las Burgers'],
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true
@@ -73,7 +73,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
-        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752017287/promo_3x2_tacos_y_gringas_eyy4ks.png',
+        image: 'images/promotions/promo_3x2_tacos_y_gringas.webp',
         categoryId: categoryIds.Tacos,
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true
@@ -86,7 +86,7 @@ export async function getPromotions(): Promise<Promotion[]> {
         discountPercentage: 0,
         originalPrice: 0,
         promoPrice: 0,
-        image: 'https://res.cloudinary.com/dhyds3mnm/image/upload/v1752017307/promo_3x2_tortas_ade4id.png',
+        image: 'images/promotions/promo_3x2_tortas.webp',
         categoryId: categoryIds.Tortas,
         createdAt: new Date('2025-07-01T05:00:00.000Z'),
         isActive: true
